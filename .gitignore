@@ -1,0 +1,25 @@
+# IntelliJ
+*.iml
+.idea
+
+# DBVisual Working Files
+
+*.met
+/ansible/inventory.yaml
+out.log
+
+# Java
+*.class
+target
+
+# Python
+*.pyc
+
+# Special Files
+test.yaml
+
+cdp_automation/clusters
+
+*.pdf
+README_tmp.html
+*.html

@@ -1,0 +1,29 @@
+#!/bin/bash
+# Update these variables
+
+dzdo mkdir -p /data/bigdata_upgrade/output
+dzdo chmod -R 777 /data/bigdata_upgrade
+
+
+git config --global http.sslVerify false
+
+git config --global credential.helper store
+
+# Hive
+export HIVE_ALIAS="beeline -u \"jdbc:hive2://hdpserver0001.hostname.com:10000/default;principal=hive/_HOST@REALM.COM;\" --hiveconf tez.queue.name=myq --hiveconf hive.query.name=HDP3UPGRADE"
+export DUMP_ENV=prod
+export TARGET_DB=hive_metadata_dump_20210306
+export OUTPUT_DIR=/data/bigdata_upgrade/output_0306
+export EXTERNAL_WAREHOUSE_DIR=/warehouse/tablespace/external/hive
+export MANAGED_WAREHOUSE_DIR=/warehouse/tablespace/managed/hive
+# Set this when using beeline
+export HIVE_OUTPUT_OPTS="--showHeader=false --outputformat=tsv2"
+export HIVE_OUTPUT_OPTS_2="--showHeader=true --outputformat=tsv2"
+# Set this when using hive
+# export HIVE_OUTPUT_OPTS=
+# Support direct connection to Namenode via /etc/hadoop/conf configs
+export JAVA_HOME=/usr/jdk64/latest
+export PATH=$PATH:$JAVA_HOME/bin
+export HC="hadoopcli"
+
+

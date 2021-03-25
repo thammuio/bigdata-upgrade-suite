@@ -1,0 +1,7 @@
+
+
+create_namespace 'bda'
+
+create 'bda:driver_dangerous_event','events'
+
+create 'bda:2cfbooks','bookids','bookdetails'

@@ -1,0 +1,10 @@
+-- No Commas
+RowID,OrderID,OrderDate,OrderMonthYear,Quantity,Quote,DiscountPct,Rate,SaleAmount,CustomerName,CompanyName,Sector,Industry,City,ZipCode,State,Region,ProjectCompleteDate,DaystoComplete,ProductKey,ProductCategory,ProductSubCategory,Consultant,Manager,HourlyWage,RowCount,WageMargin
+1,3,2010-10-13,2010-10-01,6,1200,0.04,200,1152.00,Muhammed MacIntyre,CA Inc.,Technology,Computer Software: Prepackaged Software,Highland Park,60035,Illinois,Central,2010-10-20,7,Development - Big Data,Development,Big Data,Ethan Bird,Josh Martinez,60,1,0.70
+2,6,2012-02-20,2012-02-01,2,280,0.01,140,277.20,Ruben Staebel,Celgene Corporation,Health Care,Major Pharmaceuticals,Edmonds,98026,Washington,West,2012-02-21,1,Development - Front End Web,Development,Front End Web,Isabella Douglas,Bob Turner,75,1,0.46
+
+
+-- With Commas 
+RowID,OrderID,OrderDate,OrderMonthYear,Quantity,Quote,DiscountPct,Rate,SaleAmount,CustomerName,CompanyName,Sector,Industry,City,ZipCode,State,Region,ProjectCompleteDate,DaystoComplete,ProductKey,ProductCategory,ProductSubCategory,Consultant,Manager,HourlyWage,RowCount,WageMargin
+1,3,2010-10-13,2010-10-01,6,1200,0.04,200,1152.00,Muhammed MacIntyre,CA Inc.,Technology,Computer Software: Prepackaged Software,Highland Park,60035,Illinois,Central,2010-10-20,7,Development - Big Data,Development,Big Data,Ethan Bird,Josh Martinez,60,1,0.70
+2,6,2012-02-20,2012-02-01,2,280,0.01,140,277.20,Ruben Staebel,Celgene Corporation,Health Care,Major Pharmaceuticals,Edmonds,98026,Washington,West,2012-02-21,1,Development - Front End Web,Development,Front End Web,Isabella Douglas,Bob Turner,75,1,0.46

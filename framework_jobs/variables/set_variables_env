@@ -1,0 +1,31 @@
+#!/bin/bash
+# Update these variables
+
+dzdo mkdir -p /data/bigdata_upgrade/framework_jobs_output
+dzdo chmod -R 777 /data/bigdata_upgrade/framework_jobs_output
+
+git config --global http.sslVerify false
+
+# SET 
+export BASE_DIR=/data/bigdata_upgrade
+export OUTPUT_DIR=$BASE_DIR/framework_jobs_output
+export FRAMEWORK_DIR=/data/bigdata_upgrade/bigdata-upgrade-helper/framework_jobs
+
+
+export HIVE_ALIAS="beeline -u \"jdbc:hive2://hdpserverhdp0001.hostname.com:2181,hdpserverhdp001.hostname.com:2181,hdpserverhdp0002.hostname.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2\" --hiveconf tez.queue.name=myq"
+export TARGET_DB=bda_partitions
+export OUTPUT_DIR=$BASE_DIR/hive_jobs_output
+export EXTERNAL_WAREHOUSE_DIR=/warehouse/tablespace/external/hive
+export MANAGED_WAREHOUSE_DIR=/warehouse/tablespace/managed/hive
+export WAREHOUSE_DIR_BEFORE=/apps/hive/warehouse
+export MY_WAREHOUSE_DIR=/smallfiles/hive_tables/$TARGET_DB
+# export WAREHOUSE_DIR_BEFORE=/user/hive/warehouse
+# Set this when using beeline
+export HIVE_OUTPUT_OPTS="--showHeader=false --outputformat=tsv2"
+export HIVE_OUTPUT_OPTS_2="--showHeader=true --outputformat=tsv2"
+export JAVA_HOME=/usr/jdk64/latest
+export PATH=$PATH:$JAVA_HOME/bin
+# export JAVA_HOME=/usr/java/jdk1.8.0_161
+# export JAVA_HOME=/usr/jdk64/jdk1.8.0_161
+# export PATH=$PATH:$JAVA_HOME/bin
+NOW=$(date +"%Y%m%d-%H%M")

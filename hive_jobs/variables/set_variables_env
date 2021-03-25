@@ -1,0 +1,27 @@
+#!/bin/bash
+# Update these variables
+
+dzdo mkdir -p /data/bigdata_upgrade/hive_jobs_output
+dzdo chmod -R 777 /data/bigdata_upgrade/hive_jobs_output
+
+git config --global http.sslVerify false
+
+# SDL
+export IS_UPGRADED=false
+export HIVE_ALIAS="beeline -u \"jdbc:hive2://hdpserveredga0011.hostname.com:10000/default;principal=hive/_HOST@REALM.COM;\" --hiveconf tez.queue.name=myq"
+export TARGET_DB_A=bda_hive_analysis_02152021
+export TARGET_DB_F=bda_hive_features_02152021
+export BASE_DIR=/data/bigdata_upgrade
+export OUTPUT_DIR=$BASE_DIR/hive_jobs_output
+export EXTERNAL_WAREHOUSE_DIR=/warehouse/tablespace/external/hive
+export MANAGED_WAREHOUSE_DIR=/warehouse/tablespace/managed/hive
+export WAREHOUSE_DIR_BEFORE=/apps/hive/warehouse
+# Set this when using beeline
+export HIVE_OUTPUT_OPTS="--showHeader=false --outputformat=tsv2"
+# Set this when using hive
+# export HIVE_OUTPUT_OPTS=
+export JAVA_HOME=/usr/jdk64/latest
+export PATH=$PATH:$JAVA_HOME/bin
+# export JAVA_HOME=/usr/java/jdk1.8.0_251
+# export PATH=$PATH:$JAVA_HOME/bin
+NOW=$(date +"%Y%m%d-%H%M")

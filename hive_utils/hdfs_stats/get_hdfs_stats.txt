@@ -1,0 +1,12 @@
+
+count /
+count /product
+count /user
+count /data
+count /apps/hive/warehouse
+count /warehouse/tablespace
+
+df -h /
+df /
+
+
