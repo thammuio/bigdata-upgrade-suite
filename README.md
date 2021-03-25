@@ -4,6 +4,6 @@
 # hive_jobs
 [Hive Jobs for Validations](hive_jobs/README.md)
 
-# Framework Jobs
+# framework_jobs
 [Hadoop (HDFS, YARN), HBase/Phoenix, Spark2 Jobs](framework_jobs/README.md)
 
