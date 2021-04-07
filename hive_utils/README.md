@@ -14,7 +14,7 @@ Credits to [hdp3_upgrade_utils](https://github.com/dstreev/hdp3_upgrade_utils) w
 
 ## NOTE
 
-1. As Our Cluster Does not have ACID Enabled in HDP 2.6 - We don't need to do anything for ACID or Table Compactions.
+1. If you do not have ACID Enabled in HDP / CDH cluster - We don't need to do anything for ACID or Table Compactions.
 2. Only the managed tables will be migrated to /warehouse/tablespace/managed/hive from previous /apps/hive/warehouse
 
 ## WARNINGS
