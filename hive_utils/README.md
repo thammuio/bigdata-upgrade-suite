@@ -289,6 +289,13 @@ ${HIVE_OUTPUT_OPTS} -f get_virtual_view_list.hql \
 > ${OUTPUT_DIR}/get_virtual_view_list.csv
 ```
 
+Get Timestamp of Table Creation
+```
+${HIVE_ALIAS} --hivevar DB=${TARGET_DB} --hivevar ENV=${DUMP_ENV} \
+${HIVE_OUTPUT_OPTS} -f get_timestamps_tbls.hql \
+> ${OUTPUT_DIR}/get_timestamps_tbls.csv
+```
+
 ### Overlapping Table Locations
 
 Tables sharing the same HDFS location can cause a lot of problems if one or (both/all) are managed. The conversions could move the datasets and leave the remaining tables in a strange state.
