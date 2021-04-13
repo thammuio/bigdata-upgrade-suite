@@ -21,6 +21,9 @@ ${HIVE_OUTPUT_OPTS} -f get_external_table_list.hql > ${OUTPUT_DIR}/external_tabl
 ${HIVE_ALIAS} --hivevar DB=${TARGET_DB} --hivevar ENV=${DUMP_ENV} \
 ${HIVE_OUTPUT_OPTS} -f managed_table_location.hql
 
+${HIVE_ALIAS} --hivevar DB=${TARGET_DB} --hivevar ENV=${DUMP_ENV} \
+${HIVE_OUTPUT_OPTS} -f get_timestamps_tbls.hql > ${OUTPUT_DIR}/get_timestamps_tbls.csv
+
 
 ${HIVE_ALIAS} --hivevar DB=${TARGET_DB} --hivevar ENV=${DUMP_ENV} \
 ${HIVE_OUTPUT_OPTS} -f managed_table_location.hql | \
